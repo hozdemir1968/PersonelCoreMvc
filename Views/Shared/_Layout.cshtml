@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Department</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <header>
+        <!-- Sidebar -->
+        <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+            <h3 class="w3-bar-item">Menu</h3>
+            <a href="/Home/Index/" class="w3-bar-item w3-button">Home</a>
+            <a href="/Bolum/Index/" class="w3-bar-item w3-button">Bölümler</a>
+            <a href="/Personel/Index/" class="w3-bar-item w3-button">Personeller</a>
+            <a href="#" class="w3-bar-item w3-button">Hakkımızda</a>
+        </div>
+
+        <!-- Page Content -->
+        <div style="margin-left:15%">
+
+            <div class="w3-container w3-teal">
+                <h1>Personel Takip</h1>
+            </div>
+            @RenderBody()
+        </div>
+    </header>
+    <footer class="border-top footer text-muted">
+        <div class="container" style="width:15%">
+            &copy; 2020 - Department - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

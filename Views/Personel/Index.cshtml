@@ -1,0 +1,36 @@
+﻿@using PersonelCoreMvc.Models
+@model List<Personel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Personeller</h1>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>ŞEHİR</th>
+        <th>BOLUM</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+    <tr>
+        <td>@x.ID</td>
+        <td>@x.Ad</td>
+        <td>@x.Soyad</td>
+        <td>@x.Sehir</td>
+        <td>@x.Bolum.Ad</td>
+        <td>
+            <a href="/Personel/PersonelGetir/@x.ID" class="btn btn-success">Güncelle</a>
+            <a href="/Personel/PersonelSil/@x.ID" class="btn btn-danger">Sil</a>
+        </td>
+    </tr>
+    }
+</table>
+<a href="/Personel/PersonelEkle/" class="btn btn-dark">Yeni</a>
+

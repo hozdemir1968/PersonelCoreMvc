@@ -1,0 +1,19 @@
+﻿@model PersonelCoreMvc.Models.Bolum
+
+@{
+    ViewData["Title"] = "BolumGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Bolum Getir</h1>
+<br />
+@using (Html.BeginForm("BolumGuncelle", "Bolum", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Ad)
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+}
