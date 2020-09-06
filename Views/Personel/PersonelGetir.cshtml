@@ -1,0 +1,27 @@
+﻿@model PersonelCoreMvc.Models.Personel
+
+@{
+    ViewData["Title"] = "PersonelGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+    <b>ID</b>
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    <b>AD</b>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    <b>SOYAD</b>
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    <br />
+    <b>ŞEHİR</b>
+    @Html.TextBoxFor(x => x.Sehir, new { @class = "form-control" })
+    <br />
+    <b>BÖLÜM</b>
+    @Html.DropDownListFor(x => x.Bolum.ID, (List<SelectListItem>)ViewBag.lstm, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+}

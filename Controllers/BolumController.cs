@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PersonelCoreMvc.Models;
 
@@ -10,6 +11,8 @@ namespace PersonelCoreMvc.Controllers
     public class BolumController : Controller
     {
         Context bolumcontext = new Context();
+
+        [Authorize]
 
         public IActionResult Index()
         {
@@ -50,6 +53,14 @@ namespace PersonelCoreMvc.Controllers
             bolumcontext.Bolums.Remove(blm);
             bolumcontext.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public IActionResult BolumDetay(int id)
+        {
+            var degerler = bolumcontext.Personels.Where(x => x.BolumID == id).ToList();
+            var  bolumtitle = bolumcontext.Bolums.Find(id);
+            ViewBag.blmttl = bolumtitle.Ad;
+            return View(degerler);
         }
     }
 }

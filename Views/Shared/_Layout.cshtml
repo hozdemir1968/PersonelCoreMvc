@@ -17,20 +17,21 @@
             <a href="/Bolum/Index/" class="w3-bar-item w3-button">Bölümler</a>
             <a href="/Personel/Index/" class="w3-bar-item w3-button">Personeller</a>
             <a href="#" class="w3-bar-item w3-button">Hakkımızda</a>
+            <a href="/Home/Privacy/" class="w3-bar-item w3-button">Privacy</a>
         </div>
 
         <!-- Page Content -->
         <div style="margin-left:15%">
 
             <div class="w3-container w3-teal">
-                <h1>Personel Takip</h1>
+                <h1>Personel Takip - @ViewData["Title"]</h1>
             </div>
             @RenderBody()
         </div>
     </header>
     <footer class="border-top footer text-muted">
         <div class="container" style="width:15%">
-            &copy; 2020 - Department - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - Department
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
